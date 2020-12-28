@@ -22,6 +22,7 @@ namespace Vrnz2.BaseContracts.DTOs
     }
 
     public class PingResponse
+        : BaseDTO.Response<Ping.Request>
     {
         public string ServiceDateTime { get; } = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:mm");
         public string ServiceName { get; } = AppDomain.CurrentDomain.FriendlyName;
