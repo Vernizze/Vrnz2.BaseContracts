@@ -1,5 +1,6 @@
-﻿using System;
-using Vrnz2.BaseContracts.DTOs.Base;
+﻿using Vrnz2.BaseContracts.DTOs.Base;
+using System;
+using System.Net;
 
 namespace Vrnz2.BaseContracts.DTOs
 {
@@ -26,5 +27,10 @@ namespace Vrnz2.BaseContracts.DTOs
     {
         public string ServiceDateTime { get; } = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:mm");
         public string ServiceName { get; } = AppDomain.CurrentDomain.FriendlyName;
+
+
+        public override bool Success => true;
+        public override int? StatusCode => (int)HttpStatusCode.OK;
+        public override string Message => "Success!";
     }
 }
